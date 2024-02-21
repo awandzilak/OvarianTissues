@@ -15,17 +15,17 @@ There were no missing values. The outliers were winsorized.
 ## EDA
 For both paraffine and deparaffinized samples HGSC and MUC classes were much more represented comparing to CONTROL and ENDOM.
 
-![cases distribution](https://github.com/awandzilak/OvarianTissues/blob/main/cases_distribution.jpg)
+![cases distribution](https://github.com/awandzilak/OvarianTissues/blob/main/reports/cases_distribution.jpg)
 
 After calculating the ratios we can see that in general CONTROL and ENDOM samples are well separated, however it may be a result of small population of samples. There are however some ratios which promising in terms of their ability to separate samples: lipid saturation, especially for separating between HGSC and MUC in deparaffinized samples and Amide III/Amide B ratio.
 
-![Saturation of lipids](https://github.com/awandzilak/OvarianTissues/blob/main/ratios_hist_1.jpg)
-![Amide II/Amide B ratios](https://github.com/awandzilak/OvarianTissues/blob/main/ratios_hist_16.jpg)
+![Saturation of lipids](https://github.com/awandzilak/OvarianTissues/blob/main/reports/ratios_hist_1.jpg)
+![Amide II/Amide B ratios](https://github.com/awandzilak/OvarianTissues/blob/main/reports/ratios_hist_16.jpg)
 
 It can be noted that deparaffinization influenced lipid saturation significantly. It may be caused by washing out of lipids by the solvent used. Especially we can see a change in the saturation of lipids (CH2 vibrational band / CH3 vibrational band) which may suggest more efficient washing out of CH2 groups.
 
-![Lipids/protein ratio](https://github.com/awandzilak/OvarianTissues/blob/main/boxplot_lpratio.jpg)
-![Lipids saturation](https://github.com/awandzilak/OvarianTissues/blob/main/boxplot_lsat.jpg)
+![Lipids/protein ratio](https://github.com/awandzilak/OvarianTissues/blob/main/reports/boxplot_lpratio.jpg)
+![Lipids saturation](https://github.com/awandzilak/OvarianTissues/blob/main/reports/boxplot_lsat.jpg)
 
 ## Model building
 For the purpose of classification Random Forest model was used. Both for the samples embedded in paraffine and samples after deparaffinization 3 approaches to building models were taken:
@@ -42,7 +42,7 @@ The samples were split so that all cases related to a specific patient go only t
 ## Summary
 ### Model Performance
 
-![F1 scores of all models](https://github.com/awandzilak/OvarianTissues/blob/main/scores.jpg)
+![F1 scores of all models](https://github.com/awandzilak/OvarianTissues/blob/main/reports/scores.jpg)
 
 In the left side of the plot results for samples embedded in paraffine were presented. In the right side we can see data recorded after deparaffinization.
 
@@ -63,4 +63,4 @@ For all models for the samples in paraffine, the most important features were ra
 For the samples after deparaffinization the most important features for classification were: lipid saturation, which was masked by paraffine before and percentage of beta forms which carries information about changes in the secondary structure of proteines (which is known to change in cancerous tissues).
 The plots below are plotted for the final model.
 
-![Featires importance of the final model](https://github.com/awandzilak/OvarianTissues/blob/main/features_importance_final_model.png)
+![Featires importance of the final model](https://github.com/awandzilak/OvarianTissues/blob/main/reports/features_importance_final_model.png)
