@@ -1,3 +1,7 @@
+```diff
+-  WORK IN PROGRESS  -
+```
+
 # Classification of ovarian tissues based on their spectroscopic fingerprints
 
 ## Background
@@ -9,15 +13,12 @@ Ovarian cancer is a disease with high mortality rate. One of the techniques whic
 
 ## Data
 The data contained information about intensity of FTIR vibrational bands representing groups such as: lipids, CH3 groups, CH2 groups, lipid saturation, alpha helix, beta forms and many other.
-Thickness and density of specimens may vary. This issue could be addressed by normalization of FTIR spectra before fitting. However the data I had in hand were lacking this step. For this reason for further analysis selected ratios of intensities instead of intensities were used, which solved the lack of FTIR spectra normalization problem.
-There were no missing values. The outliers were winsorized.
-
-## EDA
 For both paraffine and deparaffinized samples HGSC and MUC classes were much more represented comparing to CONTROL and ENDOM.
 
-![cases distribution](https://github.com/awandzilak/OvarianTissues/blob/main/reports/cases_distribution.jpg)
+![cases distribution](https://github.com/awandzilak/OvarianTissues/blob/main/reports/cases_distribution2.png)
 
-After calculating the ratios we can see that in general CONTROL and ENDOM samples are well separated, however it may be a result of small population of samples. There are however some ratios which promising in terms of their ability to separate samples: lipid saturation, especially for separating between HGSC and MUC in deparaffinized samples and Amide III/Amide B ratio.
+## EDA
+There were no missing values. The outliers were winsorized. Thickness and density of specimens may vary. This issue could be addressed by normalization of FTIR spectra before fitting. However the data I had in hand were lacking this step. For this reason for further analysis selected ratios of intensities instead of intensities were used, which solved the lack of FTIR spectra normalization problem. After calculating the ratios we can see that in general CONTROL and ENDOM samples are well separated, however it may be a result of small population of samples. There are however some ratios which promising in terms of their ability to separate samples: lipid saturation, especially for separating between HGSC and MUC in deparaffinized samples and Amide III/Amide B ratio.
 
 ![Saturation of lipids](https://github.com/awandzilak/OvarianTissues/blob/main/reports/ratios_hist_1.jpg)
 ![Amide II/Amide B ratios](https://github.com/awandzilak/OvarianTissues/blob/main/reports/ratios_hist_16.jpg)
